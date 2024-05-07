@@ -7,7 +7,7 @@ import os
     # **** Welcome Screen ****** 
 #---------------------------------------------------------------------
 
-def clear_screen():
+def clearScreen():
     os.system("cls" if os.name == "nt" else "clear")
 
 titleScreen = "Welcome to:\n\
@@ -18,23 +18,23 @@ titleScreen = "Welcome to:\n\
 \n | |_\ \ | (_| | (_| | | (_| | || (_) | |    | |_\ \ (_| | | | | | |  __/\__ \_| \
 \n  \____/_|\__,_|\__,_|_|\__,_|\__\___/|_|     \____/\__,_|_| |_| |_|\___||___/(_)"
 
-num_repetitions = 5
+intTimes = 5
 
-for _ in range(num_repetitions):
+for _ in range(intTimes):
     print(titleScreen)
     time.sleep(0.25)
-    clear_screen()
+    clearScreen()
     time.sleep(0.125)
 
 print(titleScreen)
-loading_bar = [
+loadingBar = [
     "  ------------------------------------------------------------------------------\n",
     "     ---------------------------------------------------------------------------\n",
     "            --------------------------------------------------------------------\n"
 ]
 
 
-for line in loading_bar:
+for line in loadingBar:
     for char in line:
         print(char, end="", flush=True)  
         time.sleep(0.009)  # Adjust the sleep time to control the speed of the loading effect
@@ -337,9 +337,9 @@ characters = {
 # Define currentChar globally to access later
 currentChar = None  
 
-def create_character(class_name, name):
+def createCharacter(className, name):
     global currentChar  
-    if class_name in characters:
+    if className in characters:
         classStats = {
             "Fighter": {"hp": 100, "mp": 50, "strength": 10, "agility": 5},
             "Mage": {"hp": 80, "mp": 100, "strength": 5, "agility": 8},
@@ -347,9 +347,9 @@ def create_character(class_name, name):
             "Citizen": {"hp": 120, "mp": 80, "strength": 9, "agility": 5}
         }
         character = {"name": name, "level": 1}
-        character.update(classStats[class_name])
-        characters[class_name].append(character)
-        print(f"{name} the {class_name} has been created!")
+        character.update(classStats[className])
+        characters[className].append(character)
+        print(f"{name} the {className} has been created!")
         currentChar = character  
         return character
     else:
@@ -361,18 +361,18 @@ def main():
     while True:
         print("Please create a character! \n")
         print("Available character classes:")
-        for i, class_name in enumerate(characters, 1):
-            print(f"{i}. {class_name}")
+        for i, className in enumerate(characters, 1):
+            print(f"{i}. {className}")
 
-        class_index = input("Choose a character class (enter the corresponding number): ")
+        classIndex = input("Choose a character class (enter the corresponding number): ")
         try:
-            class_index = int(class_index)
-            if 1 <= class_index <= len(characters):
-                class_name = list(characters.keys())[class_index - 1]
+            classIndex = int(classIndex)
+            if 1 <= classIndex <= len(characters):
+                className = list(characters.keys())[classIndex - 1]
                 while True:
                     name = input("Enter character name: ")
                     if name.strip():  # Check if the name is not blank after stripping whitespace
-                        currentChar = create_character(class_name, name)
+                        currentChar = createCharacter(className, name)
                         return  # Exit the function if a valid name is entered
                     else:
                         print("Name cannot be blank.")
@@ -417,10 +417,10 @@ def rollDice(stats_dict, num_stats=5, num_sides=20):
 
 
 # Example usage:
-# my_stats = {}
-# rollDice(my_stats)
+# myStats = {}
+# rollDice(myStats)
 
-# print(my_stats)
+# print(myStats)
 
 #---------------------------------------------------------------------
      # Rolls Characters stats
@@ -433,9 +433,9 @@ for key, value in currentChar.items():
 input("Press Enter to roll level 1 stats")
 
 # rolling stats
-my_stats = {}
+myStats = {}
 
-rollDice(my_stats)
+rollDice(myStats)
 
-for key, value in my_stats.items():
+for key, value in myStats.items():
     print(f"{key}: {value}")
