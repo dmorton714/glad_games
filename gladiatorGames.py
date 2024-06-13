@@ -7,48 +7,49 @@ import os
 # ---------------------------------------------------------------------
 
 
-def clearScreen():
-    os.system("cls" if os.name == "nt" else "clear")
+# def clearScreen():
+#     os.system("cls" if os.name == "nt" else "clear")
 
 
-titleScreen = "Welcome to:\n\
-\n  _____ _           _ _       _               _____                           _ \
-\n |  __ \ |         | (_)     | |             |  __ \                         | | \
-\n | |  \/ | __ _  __| |_  __ _| |_ ___  _ __  | |  \/ __ _ _ __ ___   ___  ___| | \
-\n | | __| |/ _` |/ _` | |/ _` | __/ _ \| '__| | | __ / _` | '_ ` _ \ / _ \/ __| | \
-\n | |_\ \ | (_| | (_| | | (_| | || (_) | |    | |_\ \ (_| | | | | | |  __/\__ \_| \
-\n  \____/_|\__,_|\__,_|_|\__,_|\__\___/|_|     \____/\__,_|_| |_| |_|\___||___/(_)"
+# titleScreen = "Welcome to:\n\
+# \n  _____ _           _ _       _               _____                           _ \
+# \n |  __ \ |         | (_)     | |             |  __ \                         | | \
+# \n | |  \/ | __ _  __| |_  __ _| |_ ___  _ __  | |  \/ __ _ _ __ ___   ___  ___| | \
+# \n | | __| |/ _` |/ _` | |/ _` | __/ _ \| '__| | | __ / _` | '_ ` _ \ / _ \/ __| | \
+# \n | |_\ \ | (_| | (_| | | (_| | || (_) | |    | |_\ \ (_| | | | | | |  __/\__ \_| \
+# \n  \____/_|\__,_|\__,_|_|\__,_|\__\___/|_|     \____/\__,_|_| |_| |_|\___||___/(_)"
 
-intTimes = 5
+# intTimes = 5
 
-for _ in range(intTimes):
-    print(titleScreen)
-    time.sleep(0.25)
-    clearScreen()
-    time.sleep(0.125)
+# for _ in range(intTimes):
+#     print(titleScreen)
+#     time.sleep(0.25)
+#     clearScreen()
+#     time.sleep(0.125)
 
-print(titleScreen)
-loadingBar = [
-    "  ------------------------------------------------------------------------------\n",
-    "     ---------------------------------------------------------------------------\n",
-    "            --------------------------------------------------------------------\n"
-]
+# print(titleScreen)
+# loadingBar = [
+#     "  ------------------------------------------------------------------------------\n",
+#     "     ---------------------------------------------------------------------------\n",
+#     "            --------------------------------------------------------------------\n"
+# ]
 
 
-for line in loadingBar:
-    for char in line:
-        print(char, end="", flush=True)  
-        time.sleep(0.009)  # wait for loading effect
-    time.sleep(0.125)  # Wait for next line
+# for line in loadingBar:
+#     for char in line:
+#         print(char, end="", flush=True)  
+#         time.sleep(0.009)  # wait for loading effect
+#     time.sleep(0.125)  # Wait for next line
 
-input("Press Enter to Play")
-os.system('cls' if os.name == 'nt' else 'clear')
+# input("Press Enter to Play")
+# os.system('cls' if os.name == 'nt' else 'clear')
 
 # ---------------------------------------------------------------------
 # Character Lore and stats
 # ---------------------------------------------------------------------
 
-fighterLore = '''In a future where survival demands strength above all else,
+fighterLore = '''The Fighter:
+    In a future where survival demands strength above all else,
 fighters embody raw power and resilience. They are forged in the crucible of
 relentless combat, their instinct and physical might unmatched. While not
 known for their intellect, their unyielding spirit and thunderous blows
@@ -56,21 +57,24 @@ inspire both fear and admiration. In this world of perpetual struggle,
 fighters stand as the vanguard of humanity's fight for survival,
 where only the strongest endure. \n'''
 
-mageLore = '''In the futuristic realm where knowledge is power, mages harness
+mageLore = '''The Mage:
+    In the futuristic realm where knowledge is power, mages harness
  the arcane energies of the universe to manipulate reality itself. Masters of
  the mystic arts, they wield their spells with precision and finesse,
  unraveling the secrets of the cosmos to reshape the world to their will.
  Though physically frail, their minds are their greatest weapons, capable of
  unlocking the boundless potential of magic to overcome any obstacle. \n'''
 
-monkLore = '''Amidst the turmoil of the future, monks are beacons of spiritual
+monkLore = '''The Monk:
+    Amidst the turmoil of the future, monks are beacons of spiritual
 enlightenment and martial prowess. Embracing discipline and inner strength,
 they walk the path of harmony and balance, seeking to unite mind, body, and
 soul. Through rigorous training and unwavering devotion, they achieve a state
 of martial perfection, capable of unleashing devastating strikes with unmatched
 speed and precision. \n'''
 
-citizenLore = '''Once among the privileged few of society, the elite now find
+citizenLore = '''The Citizen:
+    Once among the privileged few of society, the elite now find
 themselves cast into the crucible of the future's brutal arena. Born into
 wealth and privilege, they once wielded influence and power with impunity, but
 a single misstep has led them to the ultimate test of survival. Now, stripped
@@ -92,7 +96,8 @@ classStats = {
 # ---------------------------------------------------------------------
 
 
-fighter = '''FIGHTER \n
+fighter = '''The
+              Fighter \n
           @@   @@   @@@@@@@@@@@@@@@@@@@@
        -=-++==-++-=-++++++++++++++++++++-=
        @@+--@@+--#@@--------------------+@@ 
@@ -131,11 +136,11 @@ fighter = '''FIGHTER \n
                  *@@@@@@@@@@@@@@  
 '''
 
-mage = '''MAGE
+mage = '''
                                               @@@@@@@@@@
                                              @@%::::::@@
-                                       @@@@@@@%::::::@@
-                                      @@+::::::::-===@@
+        THE                            @@@@@@@%::::::@@
+          Mage                        @@+::::::::-===@@
                                     @@@+::::::::-===@@
                                @@@@@@@-::::::::-==*@@
                              @@======-:::::----==*@@
@@ -176,49 +181,47 @@ mage = '''MAGE
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 '''
 
-monk = '''MONK \n
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@#++++++++++++++++++@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@+++++++++++++++++++++++*@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@#*#************************@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@*+++++++++++++++++++++++++*@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@%+++++++++++++++++++++++++++++++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@%++*++--+++*++++*++++*++*++*+*++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@%++*++--+++*++++*++++*++*++*+*++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@%+++++==+=====+++++=====+=====++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@%++++*@@@@@@@@--=+++++++++++++++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@@***+*@@@@@@@@=-+++++*++*++*+*++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@*++--%@@=----=+++++++++++++++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@--%@@=----=+++++++++++++++%@@@@@@@@@@@@@
-@@@@@@@@@@@@@@%%%%%--#%%=--=-==+++*++*++*+*++%@@@@@@@@@@@@@
-@@@@@@@@++*++*--+==-------------+++++++++++==%@@@@@@@@@@@@@
-@@@@@@@@--=--*+++=+----------*@@---++++++==--+--@@@@@@@@@@@
-@@@@@@@@--=--*+++=+===--=--#####+=+++*+++=+--+--###@@@@@@@@
-@@@@@@@@--=--*+++=====-----@@#--=====+===----+--=--@@@@@@@@
-@@@@@@@@++*++*+++====%@@@@@--========+==++++++--=--@@@@@@@@
-@@@@@@@@@@@@@@@@%%%==****+*+=+==*+*++*==+====*==+--@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+==---===--++++++-------+++=--@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+=====--------+++++=----+--+++@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+==+=+=-=----=++*++=-=--*++@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+=====--------+++++=----+++@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#--++++++----=@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+==@@@+=+=++=+==+==+=+@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+==@@@==+====+==+==+=+@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@==+==@@@==========+==@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@*===============+==@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@#+++++++++++++++*++@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@*===============*@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@+============*@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@%%+++++++++++++#@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@*===============*@@@@@@@@@@@@@@@@@@@@@
+monk = '''
+                      @@@@@@@@@@@@@@@@@@@
+   The              @@%%%%%%%%%%%%%%%%%%@@
+     Monk          @@#++++++++++++++++++@@@
+                 @@+++++++++++++++++++++++*@@
+               @@#*#************************@@
+               @@*+++++++++++++++++++++++++*@@@
+           @@%+++++++++++++++++++++++++++++++%@@
+           @@%++*++--+++*++++*++++*++*++*+*++%@@
+           @@%++*++--+++*++++*++++*++*++*+*++%@@
+           @@%+++++==+=====+++++=====+=====++%@@
+           @@%++++*@@@@@@@@--=+++++++++++++++%@@
+            @@***+*@@@@@@@@=-+++++*++*++*+*++%@@
+           @@@@@*++--%@@=----=+++++++++++++++%@@
+              @@@@@--%@@=----=+++++++++++++++%@@
+       @@@@@@@%%%%%--#%%=--=-==+++*++*++*+*++%@@
+      @@++*++*--+==-------------+++++++++++==%@@@
+      @@--=--*+++=+----------*@@---++++++==--+--@@
+      @@--=--*+++=+===--=--#####+=+++*+++=+--+--###@@
+      @@--=--*+++=====-----@@#--=====+===----+--=--@@
+      @@++*++*+++====%@@@@@--========+==++++++--=--@@
+       @@@@@@@@@%%%==****+*+=+==*+*++*==+====*==+--@@
+                @@@==+==---===--++++++-------+++=--@@
+                 @@==+=====--------+++++=----+--+++@@
+                 @@==+==+=+=-=----=++*++=-=--*++@@@@
+                 @@==+=====--------+++++=----+++@@
+                 @@@@@@@@@@@@#--++++++----=@@@@@
+                 @@==+==@@@+=+=++=+==+==+=+@@
+                 @@==+==@@@==+====+==+==+=+@@
+                 @@==+==@@@==========+==@@@
+                   @@*===============+==@@
+                   @@#+++++++++++++++*++@@
+                   @@*===============*@@@
+                     @@+============*@@
+                   @@%%+++++++++++++#@@
+                   @@*===============*@@
 '''
-monk = monk.replace("@", " ")
 
-citizen = '''CITIZEN
-                                                           
-                                   @@@@@@@@@: @@@@@@@@@-  
-                             +@@@@@#########@@         #@:
+citizen = '''                                              
+    The                            @@@@@@@@@: @@@@@@@@@-  
+      Citizen                +@@@@@#########@@         #@:
                            -@#################   :@@@@@- 
                            -@###############:      -@@@@@: 
                            -@#############=     ##@@@####@@
@@ -317,13 +320,14 @@ def main():
         for i, className in enumerate(characters, 1):
             print(f"{i}. {className}")
 
-        classIndex = input("Choose a character class (by'#': ")
+        classIndex = input("Choose a character class (by'#'): ")
         try:
             classIndex = int(classIndex)
             if 1 <= classIndex <= len(characters):
                 className = list(characters.keys())[classIndex - 1]
                 while True:
                     name = input("Enter character name: ")
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     if name.strip():
                         currentChar = createCharacter(className, name)
                         return  # Exit the function if a valid name is entered
@@ -384,11 +388,51 @@ def rollDice(stats_dict, num_stats=5, num_sides=20):
 for key, value in currentChar.items():
     print(f"{key}: {value}") 
 input("Press Enter to roll level 1 stats")
+os.system('cls' if os.name == 'nt' else 'clear')
 
 # rolling stats
 myStats = {}
 
 rollDice(myStats)
 
+input("Press Enter to add stats")
+os.system('cls' if os.name == 'nt' else 'clear')
+
+
 for key, value in myStats.items():
     print(f"{key}: {value}")
+    
+
+for key, value in currentChar.items():
+    print(f"{key}: {value}")
+
+# ---------------------------
+
+
+# Prompt the user to select four rolls
+selected_rolls = []
+print("Select four rolls by their positions:")
+for i, (key, value) in enumerate(myStats.items(), 1):
+    print(f"{i} for {key}: {value}")
+    selected_rolls.append(key)
+
+# Loop through four times to select each roll
+for _ in range(4):
+    try:
+        selected_roll_index = int(input("Enter the number corresponding to the roll you want to use for HP, MP, Strength, and Agility: "))
+        
+        if 1 <= selected_roll_index <= len(myStats):
+            selected_roll_key = selected_rolls[selected_roll_index - 1]
+            selected_roll_value = myStats[selected_roll_key]
+
+            # Update currentChar dictionary with the value of the selected roll
+            currentChar["hp"] += selected_roll_value
+            currentChar["mp"] += selected_roll_value
+            currentChar["strength"] += selected_roll_value
+            currentChar["agility"] += selected_roll_value
+        else:
+            print("Invalid roll selected.")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+print("Updated currentChar:", currentChar)

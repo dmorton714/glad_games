@@ -94,4 +94,35 @@ mageMap = {
 }
 
 # Call the function with the artwork and color mappings
-colorAscii(mage, mageMap)
+# colorAscii(mage, mageMap)
+
+diceMap = {
+    '\\': 'blue',
+    '/': 'bright_blue',
+    ';': 'yellow',
+    ':': 'bright_yellow',
+    '+': 'blue',
+    '!': 'white',
+    '-': 'yellow',
+    '_': 'blue',
+    '#': 'blue',
+    '.': 'blue',
+    '^': 'yellow',
+    ',': 'bright_yellow',
+}
+
+diceGraphic = "\n\
+        _-_.  \n\
+     _-',^. `-_.  \n\
+ ._-' ,'   `.   `-_  \n\
+!`-_._________`-':::  \n\
+!   /\        /\::::  \n\
+;  /  \ {roll:2d}   /..\:::  \n\
+! /    \    /....\::  \n\
+!/      \  /......\:  \n\
+;--.___. \/_.__.--;;   \n\
+ '-_    `:!;;;;;;;'  \n\
+    `-_, :!;;;''  \n\
+        `-!'    \n"
+
+colorAscii(diceGraphic, diceMap)
